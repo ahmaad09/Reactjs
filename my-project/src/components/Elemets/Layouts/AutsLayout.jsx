@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 const AutsLayouts = (props) => {
-  const { children, title, type, bg } = props;
+  const { children, title, type } = props;
   return (
     <div className="flex justify-center items-center h-screen relative w-full bg-slate-100 gap-10">
-      <Background bg={bg} />
-      <div className="w-full max-w-xs">
-        <h1 className="text-blue-700 font-bold text-3xl">{title}</h1>
-        <p className="text-slate-500 font-semibold mt-3 mb-8">Welcome, pless enter your detail</p>
+      <div className="bg-[url('./logo.svg')] h-96 w-full max-w-xs bg-cover bg-center rounded-md"></div>
+      <div className="max-w-md w-[698px] bg-hijau px-10 py-10 rounded-xl" >
+        <h1 className="text-white font-bold text-3xl text-center mb-10">{title}</h1>
         {children}
         <Navigation type={type} />
       </div>
@@ -16,34 +15,41 @@ const AutsLayouts = (props) => {
 const Navigation = ({ type }) => {
   if (type === 'login') {
     return (
-      <p className="text-sm text-center my-3">
-        Don't have an acount{" "}
-        <Link to="/register" className="text-blue-600 font-semibold">
-          Register
-        </Link>     </p>
+      <p className="text-sm text-center my-3 text-white">
+        Don't have an acount {" "}
+        <Link to="/register" className="text-white font-bold">
+          <em>Sign Up</em>
+        </Link></p>
+    )
+  }
+  else if (type === 'resetacount') {
+    return (
+      <p className="text-sm text-center my-3 text-white font-semibold mt-32">Stay calm and don’t panic</p>
+    )
+  }
+  else if (type === 'resetusername') {
+    return (
+      <p className="text-sm text-center my-3 text-white font-semibold mt-3 mb-10">Username has been reset? {"  "}
+        <Link to="/login" className="text-white font-bold">
+          <em>Sign In</em>
+        </Link></p>
+    )
+  }
+  else if (type === 'resetpassword') {
+    return (
+      <p className="text-sm text-center my-3 text-white font-semibold mt-3 mb-10">Password has been reset? {"  "}
+        <Link to="/login" className="text-white font-bold">
+          <em>Sign In</em>
+        </Link></p>
     )
   }
   else {
     return (
-      <p className="text-sm text-center mt-5">
-        Al ready have an acount{" "}
-        <Link to="/login" className="text-blue-600 font-semibold">
-          Login
-        </Link>
-      </p>
-    )
-  }
-}
-
-const Background = ({ bg }) => {
-  if (bg === 'login') {
-    return (
-      <div className="bg-[url('./img/login.png')] h-96 w-full max-w-xs bg-cover bg-center order-2 rounded-md"></div>
-    )
-  }
-  else {
-    return (
-      <div className="bg-[url('./img/padi.jpg')] h-[30rem] w-full max-w-xs bg-cover bg-center order-2 rounded-md"></div>
+      <p className="text-sm text-center my-3 text-white">
+        Already have an acount? {" "}
+        <Link to="/login" className="text-white font-bold">
+          <em>Sign In</em>
+        </Link></p>
     )
   }
 }

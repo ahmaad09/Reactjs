@@ -3,7 +3,7 @@ import AutsLayouts from "../components/Elemets/Layouts/AutsLayout";
 
 const LoginPages = () => {
     return (
-        <AutsLayouts title="Login" type='login' bg="login">
+        <AutsLayouts title="Sign In" type='login' bg="login">
             <FromLogin />
         </AutsLayouts>
     )

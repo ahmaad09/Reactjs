@@ -25,10 +25,10 @@ const products = [
         description: "lorem insum have to the gays"
     },
 ]
-const email = localStorage.getItem("email")
+const email = localStorage.getItem("username")
 
 const hendaleLogout = () => {
-    localStorage.removeItem("email")
+    localStorage.removeItem("username")
     localStorage.removeItem("password")
     window.location.href = "/login     "
 }

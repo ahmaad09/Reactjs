@@ -3,7 +3,7 @@ import AutsLayouts from "../components/Elemets/Layouts/AutsLayout";
 
 const RegisterPages = () => {
     return (
-        <AutsLayouts title="Register" type='register' bg="register">
+        <AutsLayouts title="Sign Up" type='register' bg="register">
             <FromRegister />
         </AutsLayouts>
     );

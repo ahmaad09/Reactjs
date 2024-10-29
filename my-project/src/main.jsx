@@ -6,10 +6,13 @@ import LoginPages from './Pages/login.jsx';
 import RegisterPages from './Pages/Register.jsx';
 import ErrorPage from './Pages/404.jsx';
 import ProductPage from './Pages/products.jsx';
+import ResetAcount from './Pages/resetAcount.jsx';
+import ResetUsername from './Pages/resetUsername.jsx';
+import ResetPassword from './Pages/resetPassword.jsx';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "",
     errorElement: <ErrorPage />
   },
   {
@@ -19,6 +22,18 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <RegisterPages />
+  },
+  {
+    path: "/resetAcount",
+    element: <ResetAcount/>
+  },
+  {
+    path: "/resetUsername",
+    element: <ResetUsername/>
+  },
+  {
+    path: "/resetPassword",
+    element: <ResetPassword/>
   },
   {
     path: "/products",

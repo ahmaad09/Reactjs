@@ -1,10 +1,10 @@
-const Input = ({ type = "text", placeholder, name,id }) => {
+const Input = ({ type = "text", placeholder, name,id,classname="bg-blue" }) => {
     return (
       <input
         maxLength={30}
         name={name}
         type={type}
-        className="text-sm border rounded-md border-black bg-transparent w-full placeholder:text-slate-500 py-2 px-3 text-slate-700 focus:outline-none"
+        className={`text-sm border rounded-full border-black  w-full placeholder:text-slate-500 py-3 px-3 text-slate-700 focus:outline-none italic ${classname}`}
         placeholder={placeholder}
         id={id}
       />

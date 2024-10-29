@@ -5,7 +5,8 @@ export default {
   theme: {
     extend: {
       colors:{
-        'hijau':'#3A5B22',
+        'hijau':'#00583B',
+        'kuning':'#E5AD23'
       }
     },
   },
