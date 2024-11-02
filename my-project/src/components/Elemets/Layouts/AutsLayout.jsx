@@ -52,6 +52,7 @@ const Navigation = ({ type }) => {
         </Link></p>
     )
   }
+ 
 }
 
 export default AutsLayouts;   

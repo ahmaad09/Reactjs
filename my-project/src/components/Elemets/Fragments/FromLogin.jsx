@@ -7,7 +7,7 @@ const FromLogin = () => {
         localStorage.setItem("username", event.target.username.value)
         localStorage.setItem("password", event.target.password.value)
         event.preventDefault();
-        window.location.href = "/products"
+        window.location.href = "/dashboard"
     }
     return (
         <form form onSubmit={hendeleLogin} className="flex flex-col">

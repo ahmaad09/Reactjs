@@ -1,6 +1,5 @@
 import Button from "../Button/Index";
 import InputForm from "../Input/Index";
-import Chexbox from "../Button/Forgot";
 import { Link } from "react-router-dom";
 
 const FromRegister = () => {

@@ -9,10 +9,17 @@ import ProductPage from './Pages/products.jsx';
 import ResetAcount from './Pages/resetAcount.jsx';
 import ResetUsername from './Pages/resetUsername.jsx';
 import ResetPassword from './Pages/resetPassword.jsx';
+import Dashboard from './Pages/dashboard.jsx';
+import HomePages from './Pages/homePages.jsx';
+import Forum from './Pages/forum.jsx';
 
 const router = createBrowserRouter([
   {
     path: "",
+    element: <HomePages />
+  },
+  {
+    path: "*",
     errorElement: <ErrorPage />
   },
   {
@@ -38,6 +45,14 @@ const router = createBrowserRouter([
   {
     path: "/products",
     element: <ProductPage/>
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard/>
+  },
+  {
+    path: "/forum",
+    element: <Forum/>
   }
 ])
 
