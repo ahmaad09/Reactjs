@@ -12,10 +12,11 @@ import ResetPassword from './Pages/resetPassword.jsx';
 import Dashboard from './Pages/dashboard.jsx';
 import HomePages from './Pages/homePages.jsx';
 import Forum from './Pages/forum.jsx';
+import Panduan from './Pages/panduan.jsx';
 
 const router = createBrowserRouter([
   {
-    path: "",
+    path: "/",
     element: <HomePages />
   },
   {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
   {
     path: "/forum",
     element: <Forum/>
+  },
+  {
+    path: "/panduan",
+    element: <Panduan/>
   }
 ])
 

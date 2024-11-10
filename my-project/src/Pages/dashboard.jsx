@@ -1,10 +1,14 @@
 import { Fragment, useEffect, useState } from "react";
+import { motion } from "framer-motion"; // Import framer-motion
 import Header from "../components/Elemets/Fragments/Header";
 import Navigasi from "../components/Elemets/Fragments/Navigasi";
 import WeatherForecast from "../components/Elemets/Fragments/weatherComponent";
 import Footer from "../components/Elemets/Fragments/Footer";
 import MyCalendar from "../components/Elemets/Fragments/Calanderd";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const Dashboard = () => {
     const [jam, setJam] = useState("");
@@ -35,19 +39,19 @@ const Dashboard = () => {
 
     return (
         <Fragment>
-            <Header >
+            <Header>
                 <Navigasi 
                     dashboardText="Dashboard"
                     forumText="Forum" 
                     panduanText="Panduan" 
-                    pengaturanText="Pengaturan" 
-                    />
+                    pengaturanText="Pengaturan"
+                />
             </Header>
             <div className="flex flex-col mt-32 mx-5 gap-5">
                 <div className="flex gap-5">
-                    <img src="/img/jagung-1.png" alt="" />
-                    <div className="flex flex-col gap-4">
-                        <h2 className="p-4 bg-hijau rounded-full text-white font-bold text-xl w-fit">Selamat Datang di JagoAgri!</h2>
+                    <img src="/img/jagung-1.png" alt=""  data-aos = "fade-right"/>
+                    <div className="flex flex-col gap-4" data-aos = "fade-left">
+                        <h2 className="p-4 bg-hijau rounded-full text-white font-bold text-xl w-fit mb-5">Selamat Datang di JagoAgri!</h2>
                         <p className="text-xl">
                             Jagung adalah tanaman pangan penting yang termasuk dalam keluarga rumput-rumputan (Poaceae) dan memiliki peran utama sebagai sumber karbohidrat di banyak negara. Selain sebagai makanan pokok, jagung juga digunakan dalam industri pakan ternak dan bahan baku produk olahan seperti minyak jagung, tepung, dan pati. Tanaman ini mudah dibudidayakan di berbagai kondisi iklim, terutama di daerah tropis. Jagung juga memiliki siklus panen yang relatif cepat dan produktivitas tinggi, menjadikannya pilihan ideal dalam mendukung ketahanan pangan dan industri pertanian.
                         </p>
@@ -90,7 +94,12 @@ const Dashboard = () => {
 const Cards = (props) => {
     const { title, imgURL } = props;
     return (
-        <div className="w-64 h-64 flex flex-col p-3 mb-20 justify-center">
+        <motion.div 
+            className="w-64 h-64 flex flex-col p-3 mb-20 justify-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+        >
             <div className="bg-hijau rounded-2xl flex flex-col p-4">
                 <img src={imgURL} alt="" className="object-fill" height={"80px"} />
             </div>
@@ -99,7 +108,7 @@ const Cards = (props) => {
                     <h5>{title}</h5>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

@@ -42,7 +42,7 @@ const Navigation = ({ type }) => {
           <em>Sign In</em>
         </Link></p>
     )
-  }
+  } 
   else {
     return (
       <p className="text-sm text-center my-3 text-white">
