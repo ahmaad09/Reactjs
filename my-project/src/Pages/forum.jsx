@@ -4,6 +4,7 @@ import Navigasi from "../components/Elemets/Fragments/Navigasi";
 import Button from "../components/Elemets/Button/Index";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import Footer from "../components/Elemets/Fragments/Footer";
 // ..
 AOS.init();
 
@@ -52,7 +53,7 @@ const Forum = () => {
                     pengaturanText="Pengaturan"
                 />
             </Header>
-            <div className="container mx-auto">
+            <div className="container mx-auto mb-10">
                 <h1 className="text-2xl text-hijau font-semibold border-b-hijau w-fit mt-10 border-b-2">Forum</h1>
                 <div className="bg-hijau p-3 mt-10 rounded-lg flex gap-5 items-center">
                     <div className="bg-white rounded-full w-[50px] h-[50px]"></div>
@@ -77,7 +78,7 @@ const Forum = () => {
                                     <button type="button" className="text-white bg-kuning py-1 px-3 rounded-xl text-sm">Hama</button>
                                 </div>
                             </div>
-                            <div className="flex gap-5 items-end ml-[30rem] md:ml-[45rem]">
+                            <div className="flex gap-5 items-end ml-[30rem]">
                                 <img src="/icons/like.png" alt="like" className="h-7" />
                                 <img src="/icons/komentar.png" alt="comment" className="h-7" />
                                 <img src="/icons/shere.png" alt="" className="h-7" />
@@ -86,6 +87,7 @@ const Forum = () => {
                     ))}
                 </div>
             </div>
+            <Footer/>
         </Fragment>
     );
 };

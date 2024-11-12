@@ -47,6 +47,12 @@
 .react-calendar__tile--active:enabled:hover {
   @apply bg-blue-700; /* Warna saat hover pada tanggal aktif */
 }
+/* Custom background color for react-calendar */
+.react-calendar {
+  @apply bg-green-500; /* Ubah warna latar belakang menjadi hijau */
+  border-radius: 0.5rem; /* Tambahkan sedikit rounded corner */
+}
+
 
 /* Animasi slide-down dan fade-in */
 .menu-enter {

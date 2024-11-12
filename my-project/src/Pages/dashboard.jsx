@@ -7,6 +7,7 @@ import Footer from "../components/Elemets/Fragments/Footer";
 import MyCalendar from "../components/Elemets/Fragments/Calanderd";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import CardNews from "../components/Elemets/data/CardNews";
 // ..
 AOS.init();
 
@@ -38,7 +39,7 @@ const Dashboard = () => {
     }, []);
 
     return (
-        <Fragment>
+        <Fragment className="container mx-auto">
             <Header>
                 <Navigasi 
                     dashboardText="Dashboard"
@@ -47,12 +48,12 @@ const Dashboard = () => {
                     pengaturanText="Pengaturan"
                 />
             </Header>
-            <div className="flex flex-col mt-32 mx-5 gap-5">
+            <div className="flex flex-col mt-32 gap-5 mx-5">
                 <div className="flex gap-5">
                     <img src="/img/jagung-1.png" alt=""  data-aos = "fade-right"/>
                     <div className="flex flex-col gap-4" data-aos = "fade-left">
-                        <h2 className="p-4 bg-hijau rounded-full text-white font-bold text-xl w-fit mb-5">Selamat Datang di JagoAgri!</h2>
-                        <p className="text-xl">
+                        <h2 className="p-4 bg-hijau rounded-full text-white font-bold text-md w-fit mb-5">Selamat Datang di JagoAgri!</h2>
+                        <p className="text-md">
                             Jagung adalah tanaman pangan penting yang termasuk dalam keluarga rumput-rumputan (Poaceae) dan memiliki peran utama sebagai sumber karbohidrat di banyak negara. Selain sebagai makanan pokok, jagung juga digunakan dalam industri pakan ternak dan bahan baku produk olahan seperti minyak jagung, tepung, dan pati. Tanaman ini mudah dibudidayakan di berbagai kondisi iklim, terutama di daerah tropis. Jagung juga memiliki siklus panen yang relatif cepat dan produktivitas tinggi, menjadikannya pilihan ideal dalam mendukung ketahanan pangan dan industri pertanian.
                         </p>
                     </div>
@@ -86,10 +87,12 @@ const Dashboard = () => {
                 </div>
             </div>
             <MyCalendar />
+            <CardNews/>
             <Footer />
         </Fragment>
     );
 };
+
 
 const Cards = (props) => {
     const { title, imgURL } = props;

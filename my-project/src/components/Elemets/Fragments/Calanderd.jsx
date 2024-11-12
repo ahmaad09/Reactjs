@@ -11,7 +11,7 @@ function MyCalendar() {
             <Calendar
                 onChange={onChange}
                 value={value}
-                className="rounded-lg shadow-md border border-gray-200 p-5 bg-hijau"
+                className="react-calendar rounded-lg shadow-md border border-gray-200 p-5"
             />
         </div>
     );
