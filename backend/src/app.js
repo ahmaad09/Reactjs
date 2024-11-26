@@ -12,7 +12,7 @@ app.use(middlewareLogRequest);
 app.use(express.json());
 app.use('/assets',express.static('public/images'));
 app.use('/users', usersRouter);
-app.use('/upload', upload.single('images'),(req,res) => {
+app.use('/upload', upload.single('image'),(req,res) => {
     res.json({
         massage: "upload file succses"
     })
