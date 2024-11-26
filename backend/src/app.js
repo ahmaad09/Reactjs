@@ -1,20 +1,23 @@
+require('dotenv').config();
 const express = require('express');
-const usersRouter = require('./routes/users')
-const middlewareLogRequest = require('./middleware/logs')
-const dbPoll = require('./config/database')
+const PORT = process.env.PORT;
+const usersRouter = require('./routes/users');
+const middlewareLogRequest = require('./middleware/logs');
+const dbPoll = require('./config/database');
+const upload = require('./middleware/multer');
 
-app = express();
+const app = express();
 
-app.use(middlewareLogRequest)
-
-// app.use('/', (req, res) => {
-    
-// })
-
-app.use(express.json())
-
-app.use('/users',usersRouter)
-
-app.listen(4000, () => {
-    console.log(`server berhasil di running di port 4000`);
+app.use(middlewareLogRequest);
+app.use(express.json());
+app.use('/assets',express.static('public/images'));
+app.use('/users', usersRouter);
+app.use('/upload', upload.single('images'),(req,res) => {
+    res.json({
+        massage: "upload file succses"
+    })
 })
+
+app.listen(PORT, () => {
+    console.log(`Server berhasil di running di port ${PORT}`);
+});
